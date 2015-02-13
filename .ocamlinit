@@ -10,3 +10,12 @@ let () =
 #require "core.top";;
 #require "core.syntax";;
 #require "qcheck";;
+#mod_use "semilattice.mli";;
+#mod_use "semilatticeProp.ml";;
+#mod_use "natural.ml";;
+#mod_use "natlist.ml";;
+#mod_use "natset.ml";;
+
+module NaturalCheck = SemilatticeProp.Make(Natural);;
+module NatlistCheck = SemilatticeProp.Make(Natlist);;
+module NatsetCheck  = SemilatticeProp.Make(Natset);;
